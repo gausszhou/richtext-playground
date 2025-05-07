@@ -5,7 +5,7 @@
 
 <script lang="ts" setup>
 import { onMounted } from "vue";
-import Quill from "quill";
+import Quill, { type QuillOptions } from "quill";
 import TableUp, {
     defaultCustomSelect,
     TableAlign,
@@ -31,7 +31,7 @@ const toolbarOptions = [
     ["clean"], // remove formatting button
 ];
 
-const options = {
+const options: QuillOptions = {
     debug: "info",
     modules: {
         toolbar: toolbarOptions,
@@ -53,6 +53,7 @@ const options = {
 };
 onMounted(() => {
     const quill = new Quill("#quill-editor", options);
+    console.log(quill);
 });
 </script>
 
